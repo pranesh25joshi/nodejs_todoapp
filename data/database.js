@@ -5,8 +5,8 @@ import mongoose from "mongoose";
 export const mongodb = () => {
     mongoose.connect(process.env.MONGO_URL,{
         dbName: "backend",
-    }).then(() => {
-        console.log("MongoDB connected");
+    }).then((c) => {
+        console.log(`MongoDB connected with HOST: ${c.connection.host}`);
     }).catch((err) => {
         console.log(err);
     })
